@@ -1,0 +1,30 @@
+module tb_mux4_case;
+
+    reg a, b, c, d;
+    reg [1:0] sel;
+    wire y;
+
+    mux4_case dut (
+        .a(a), .b(b), .c(c), .d(d),
+        .sel(sel), .y(y)
+    );
+
+    initial begin
+        // VCD dump setup
+        $dumpfile("dump.vcd");
+        $dumpvars(0, tb_mux4_case);
+
+        // Input values
+        a = 1; b = 0; c = 1; d = 0;
+
+        sel = 2'b00; #10;
+        sel = 2'b01; #10;
+        sel = 2'b10; #10;
+        sel = 2'b11; #10;
+
+        $finish;
+    end
+
+    initial begin
+        $monitor("Time=%0t sel=%b y=%b", $time, sel, y);
+    end
