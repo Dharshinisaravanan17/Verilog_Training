@@ -1,4 +1,4 @@
-# Day 3 – Real RTL System Design
+# Day 3 – RTL Cleanup + Blocking vs Non-Blocking
 
 This repository contains **Day 3 RTL projects** covering combinational and sequential logic. All code follows **industry-standard RTL style** suitable for interviews.
 
